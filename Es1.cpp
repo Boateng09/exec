@@ -39,3 +39,17 @@ public:
         cout << "Sono un treno.\n";
     }
 };
+int main() {
+    Auto auto1;
+    Bicicletta bici;
+    Treno treno;
+
+    std::vector<Veicolo*> veicoli = {&auto1, &bici, &treno};
+
+    for (Veicolo* v : veicoli) {
+        v->descrizione();
+        v->muovi();
+    }
+
+    return 0;
+}
