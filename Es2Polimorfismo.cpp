@@ -45,3 +45,18 @@ void turno(Personaggio* p) {
     p->presentati();
     p->attacca();
 }
+int main() {
+    CartaCredito carta;
+    PayPal paypal;
+    Contanti contanti;
+
+    std::vector<MetodoPagamento*> metodi = {
+        &carta, &paypal, &contanti
+    };
+
+    for (MetodoPagamento* metodo : metodi) {
+        metodo->pagaConCommissione(100.0, 2.0);
+    }
+
+    return 0;
+}
